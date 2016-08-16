@@ -1,5 +1,7 @@
 package tr.org.lyk2016.todo;
 
+import java.util.Iterator;
+
 public class Menu {
 
 	public static void printMenu(){
@@ -11,16 +13,23 @@ public class Menu {
 
 		//TODO use TodoHelper's getIterator method here
 		// hint: use a while loop
-		
-		for(Todo todo : TodoHelper.getTodos()){
+		int i=1;
+		Iterator<Todo> itr = TodoHelper.getIterator();
+		while(itr.hasNext()) {
 			
+			Todo todo = itr.next();
+
 			// TODO add checkbox according to 'done' status
 			// TODO add index numbers for users to choose
+			
 			menu.append("(");
+			menu.append(i);
 			menu.append(") ");
 			menu.append(" ");
+			menu.append(todo.getCheckbox());
 			menu.append(todo.getDescription());
 			menu.append("\n");
+			i++;
 		}
 		
 		menu.append("\n");

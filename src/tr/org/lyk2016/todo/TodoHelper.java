@@ -27,11 +27,17 @@ public class TodoHelper {
 	 */
 	public static void mark(int index, boolean isDone) {
 		// TODO you need to implement this method
+		Todo t = todos.get(index);
+		t.setDone(isDone);
 	}
 
 	public static Iterator<Todo> getIterator() {
 		// TODO remove following exception and return an appropriate value
-		throw new UnsupportedOperationException("You need to implement (fill) this method's body.");
+		//Iterator<Todo> ıt = todos.iterator();
+		//ıt.hasNext();
+		//ıt.next();
+		return todos.iterator();
+		//throw new UnsupportedOperationException("You need to implement (fill) this method's body.");
 	}
 
 	public static Collection<Todo> getTodos() {
